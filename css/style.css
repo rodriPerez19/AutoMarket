@@ -1,0 +1,387 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100vh;
+    background-image: url("../img/fondo.jpg");
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.main__index{
+    height: 100vh;
+    /* width: 100%; */
+    display: grid;
+    grid-auto-rows:auto;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 500px));
+
+    grid-template-areas: " nav      nav      nav"
+                         " carousel carousel carousel"
+                         "card      card     card" 
+                         "footer    footer   footer";
+                         
+    
+}
+
+.nav__container{
+    
+    grid-area: nav;
+    background-image: url("../img/navFondo.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    background-repeat: no-repeat;
+    
+   
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px; */
+    transition: all 0.5s ease;
+    position: fixed;
+    z-index: 1000;
+    
+}
+
+.navbar.active{
+    background-color: chocolate;
+}
+.navbar.active a{
+    color: #000;
+}
+.navbar.active a:hover{
+    background-color: #000;
+    color: #fff;
+}
+.logo img{
+    width: 3em;
+    height: 3em;
+}
+
+.menu{
+    display: flex;
+    margin-right: 20px;
+}
+
+.menu li{
+    list-style: none;
+    margin: 10px;
+}
+.menu li a{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.menu li a:hover{
+    color: #000;
+    
+    padding: 5px 10px;
+    border-radius: 15px;
+    
+}
+.menu__hamburguesa{
+    display: none;
+}
+.carousel__container{
+    grid-area: carousel;
+    display: flex;
+    flex-direction: column;
+    /* place-content: center; */
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(90deg,#000 ,#fff); */
+}
+.carousel__title{
+    margin-top:  60px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #000;
+}
+.carousel__imagenes{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    height: 80%;
+    width: 900px;
+    overflow: hidden;
+}
+.carousel{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    transition: 1s;
+    height: 90%;
+    width: 100%;
+    
+}
+.arrow{
+    font-size: 50px ;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.img__carousel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 100%;
+}
+.img__carousel img{
+    width: 300px;
+    height: 100%;
+}
+.card__container{
+    grid-area: card;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card__container__title{
+    margin-top:  60px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 3px solid black;
+}
+.cards{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill,minmax(10rem, 35rem));
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* position: relative; */
+}
+
+.card{
+    border: 3px solid #000;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    transition: 1s;
+}
+.card:hover{
+    transform: translateY(-15px);
+}
+
+.card img{
+    width: 100%;
+    height: 70%;
+}
+.card h2{
+    width: 100%;
+    text-align: center;
+    /* padding: 10px; */
+    border-bottom: 3px solid black;
+}
+
+.price__before{
+    color: red;
+}
+.price__after{
+    color: green;
+}
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 15vh;
+    border-top: 3px solid #000;
+    /* margin: 5px 0px; */
+    font-size: 20px;
+    background-color: chocolate;
+}
+
+.main__contact{
+    height: 100vh;
+    display: grid;
+    grid-auto-rows:   auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 500px));
+
+    grid-template-areas: "nav      nav      nav"
+                         "form      form     form" 
+                         "footer    footer   footer";                    
+}
+
+#form{
+    grid-area: form;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+}
+.form{
+    
+    height: 80%;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid #000;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0,0.7);
+}
+.input__group{
+    display: flex;
+    flex-direction: column;
+}
+.input__group label{
+    color: chocolate;
+    margin: 5px;
+    
+}
+.input__group input{
+    margin: 5px;
+    border: none;
+    border-bottom: 2px solid chocolate;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+}
+
+#submit{
+    background: none;
+    outline: none;
+    border: none;
+    color: chocolate;
+    font-size:18px ;
+    transition: 1s;
+    padding: 10px;
+}
+#submit:hover{
+    background-color: chocolate;
+   
+    color: #000;
+    border-radius: 5px;
+}
+
+@media (max-width: 450px){
+
+    .navbar{
+        position: fixed;
+        transition: 1s;
+    }
+    .nav__close{
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    .nav__open{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .menu__hamburguesa{
+        display: flex;
+        width: 100%;
+        /* width: 100%; */
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        z-index: 2000;
+        transition: 1s;
+        position: fixed;
+    }
+    .hamburguesa{
+        
+        margin-left: 30px;
+        height: 30px;
+        width: 30px;
+        padding: 10px;
+        color: chocolate;
+        
+    }
+    .hamburguesa__activa{
+        transform: translateX(-10rem);
+    }
+    .logo{
+        display: none;
+    }
+    .navbar{
+        right: 0;
+        height: 100vh;
+        width: 10rem;
+    }
+    .menu{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        align-items: center;
+        row-gap: 10px;
+    }
+    .menu li{
+        text-align: center;
+        width: 80%;
+        
+    }
+    .menu li a:hover{
+        color: #000;
+        
+        padding: 5px 10px;
+        border-radius: 15px;
+        
+    }
+
+    .content{
+       width: 100%;
+       height: 100%;
+    }
+    .carousel{
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(auto-fill,minmax(10rem, 35rem));
+        justify-content: center;
+        align-items: center;
+        gap:20px;
+    }
+   .img__carousel{
+       width: 100%;
+   }
+    .img__carousel img{
+        width: 100%;
+    }
+
+    #arrow__left,#arrow__rigth{
+        display: none;
+    }
+    .form{
+        width: 250px;
+    }
+    .footer{
+        flex-direction: column;
+        height: 30vh;
+    }
+
+}
